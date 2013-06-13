@@ -39,4 +39,8 @@ class UserSession < Authlogic::Session::Base
   # attr_accessible :title, :body
 end
 ```
+## user_sessionsテーブルとusersテーブルの作成
+
+`db/migrate`ディレクトリ以下にあるmigrationファイルを編集して、`user_sessions`テーブルと`users`テーブルを作成
+
 
