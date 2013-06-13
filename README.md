@@ -59,4 +59,8 @@ end
 
 `bundle exec rails g controller users`でひな形を作成し、Controllerを実装する。
 
+## Users#new のViewを作成
+
+ユーザ登録用のViewを`app/views/users/`以下に作成する。
+
 
