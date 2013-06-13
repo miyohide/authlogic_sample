@@ -30,4 +30,13 @@
 
 `user_session`モデルは、`bundle exec rails g model user_session`で、`user`モデルは、`bundle exec rails g model user`で作成。
 
+## UserSessionクラスの親クラスを変更
+
+`app/models/user_session.rb`を開き、`UserSession`クラスの親クラスを`Authlogic::Session::Base`に変更。
+
+```ruby
+class UserSession < Authlogic::Session::Base
+  # attr_accessible :title, :body
+end
+```
 
