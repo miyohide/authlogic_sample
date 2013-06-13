@@ -51,4 +51,8 @@ end
 
 `bundle exec rails g controller user_sessions`でひな形を作成し、Controllerを実装する。
 
+## UserSessions#new のViewを作成
+
+メールアドレスとパスワードを入力する欄を作ったログインフォームを`app/views/user_sessions/new.html.erb`に作成する。
+
 
