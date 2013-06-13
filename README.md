@@ -47,4 +47,8 @@ end
 
 `app/controllers/application_controller.rb`に`current_user`などの処理を書く
 
+## UserSessionsコントローラの作成
+
+`bundle exec rails g controller user_sessions`でひな形を作成し、Controllerを実装する。
+
 
