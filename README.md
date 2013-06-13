@@ -24,3 +24,10 @@
 
 作成したら、`bundle exec rake db:migrate`でテーブルを作成
 
+## 認証用のモデルを作成
+
+認証処理のために、セッションを持つ`user_session`モデルとユーザの情報を持つ`user`モデルを作成。
+
+`user_session`モデルは、`bundle exec rails g model user_session`で、`user`モデルは、`bundle exec rails g model user`で作成。
+
+
