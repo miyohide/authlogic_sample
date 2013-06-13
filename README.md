@@ -63,4 +63,8 @@ end
 
 ユーザ登録用のViewを`app/views/users/`以下に作成する。
 
+## routesの作成
+
+`config/routes.rb`にて、URL routesを設定する。
+
 
