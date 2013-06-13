@@ -43,4 +43,8 @@ end
 
 `db/migrate`ディレクトリ以下にあるmigrationファイルを編集して、`user_sessions`テーブルと`users`テーブルを作成
 
+## application_controllerでcurrent_userなどの処理を定義
+
+`app/controllers/application_controller.rb`に`current_user`などの処理を書く
+
 
