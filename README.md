@@ -55,4 +55,8 @@ end
 
 メールアドレスとパスワードを入力する欄を作ったログインフォームを`app/views/user_sessions/new.html.erb`に作成する。
 
+## Usersコントローラの作成
+
+`bundle exec rails g controller users`でひな形を作成し、Controllerを実装する。
+
 
