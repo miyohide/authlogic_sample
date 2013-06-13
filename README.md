@@ -67,4 +67,8 @@ end
 
 `config/routes.rb`にて、URL routesを設定する。
 
+## Userモデルで認証処理の実装
+
+`app/models/user.rb`にて、認証処理を実装する。今回は`email`をログインキーとする。
+
 
