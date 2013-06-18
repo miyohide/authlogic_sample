@@ -37,7 +37,7 @@ class ApplicationController < ActionController::Base
 
   # ログイン/ログアウトの処理の前にいたページの情報を保存
   def store_location
-    session[:return_to] = request.request_uri
+    session[:return_to] = request.fullpath
   end
 
   # 処理が終わった後に戻るページを返す
