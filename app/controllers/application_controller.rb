@@ -1,7 +1,14 @@
 # coidng: utf-8
 
 class ApplicationController < ActionController::Base
+  include TheRole::Requires
+
   protect_from_forgery
+
+  def access_denied
+    render text: 'access_denied: requires an role' and return
+  end
+
 
   helper_method :current_user_session, :current_user
 
@@ -45,4 +52,7 @@ class ApplicationController < ActionController::Base
     redirect_to(session[:return_to] || default)
     session[:return_to] = nil
   end
+  
+  alias_method :login_required, :require_user
+  alias_method :role_access_denied, :access_denied
 end
