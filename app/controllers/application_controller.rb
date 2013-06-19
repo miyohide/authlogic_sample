@@ -9,7 +9,6 @@ class ApplicationController < ActionController::Base
     render text: 'access_denied: requires an role' and return
   end
 
-
   helper_method :current_user_session, :current_user
 
   private

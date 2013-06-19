@@ -1,6 +1,7 @@
 class EntriesController < ApplicationController
 
   before_filter :require_user
+  before_filter :role_required
 
   # GET /entries
   # GET /entries.json
