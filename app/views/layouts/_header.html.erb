@@ -2,6 +2,7 @@
   <% if current_user.nil? %>
     <%= link_to 'Sign up', signup_path %> or <%= link_to 'log in', login_path %>
   <% else %>
+    <strong><%= current_user.email %></strong>がログイン中です。
     <%= link_to 'log out', logout_path, method: :delete %>
   <% end %>
 </header>
