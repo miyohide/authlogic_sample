@@ -11,5 +11,5 @@ AuthlogicSample::Application.routes.draw do
 
   match 'signup' => 'users#new', as: :signup
 
-  root to: 'user_sessions#new'
+  root to: 'entries#index'
 end
