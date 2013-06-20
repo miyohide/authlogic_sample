@@ -71,4 +71,24 @@ end
 
 `app/models/user.rb`にて、認証処理を実装する。今回は`email`をログインキーとする。
 
+# the_roleの導入
 
+権限管理のためにthe_roleを導入します。導入手順は次の通り。
+
+## Gemの追加
+
+`Gemfile`に`gem 'the_role', '~>1.7.0'`を追加。また、権限周りの設定をGUIで行えるように`gem 'bootstrap-sass', '~> 2.3.1.0'`も追加しておくとよい。
+
+追加したら`bundle install`する。
+
+## role_idカラムの追加
+
+ユーザ情報を格納しているテーブル（今回の場合は`users`テーブル）に対して`role_id`カラムを追加します。
+
+`rails g migration AddRoleIdToUsers`でMigrationファイルを作ればよいでしょう。
+
+その後、`rake db:migrate`を実行して、カラムを追加します。
+
+
+
+##
