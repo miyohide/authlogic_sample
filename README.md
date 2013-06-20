@@ -83,12 +83,47 @@ end
 
 ## role_idカラムの追加
 
-ユーザ情報を格納しているテーブル（今回の場合は`users`テーブル）に対して`role_id`カラムを追加します。
+ユーザ情報を格納しているテーブル（今回の場合は`users`テーブル）に対して`role_id`カラムを追加する。
 
-`rails g migration AddRoleIdToUsers`でMigrationファイルを作ればよいでしょう。
+`rails g migration AddRoleIdToUsers`でMigrationファイルを作ればよい。
 
-その後、`rake db:migrate`を実行して、カラムを追加します。
+その後、`rake db:migrate`を実行して、カラムを追加。
+
+## roleモデルの作成
+
+`rails g model role --migration=false`を実行して`role`モデルを作成する。
+
+migrationファイルはこの後のコマンドで作成する。
+
+## rolesテーブルの作成
+
+`the_role`が用意している`rake`コマンド`rake the_role_engine:install:migrations`を実行してrolesテーブルのmigrationファイルを作成する。
+
+作成後は、`rake db:migrate`でテーブルを作成する。
+
+## alias_methodの設定
+
+`alias_method`を使って、`login_required`と`role_access_denied`の設定を行う。実装は`application_controller.rb`に。
+
+`login_required`は使っている認証プラグインらが用意しているログインを求めるメソッドを指定する。
+
+`role_access_denied`は権限不正の時の処理を指定する。
+
+```ruby
+class ApplicationController < ActionController::Base
+  include TheRole::Requires
+
+  def access_denied
+    render text: 'access_denied: requires an role' and return
+  end
+
+  # ログインを求めるメソッドを指定
+  alias_method :login_required, :require_user
+  # 権限不正の時の処理を指定
+  alias_method :role_access_denied, :access_denied
+
+  # 以下省略
+end
+```
 
 
-
-##
